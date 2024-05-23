@@ -1,0 +1,20 @@
+# Ignore node_modules
+node_modules/
+
+# Ignore Cypress specific files
+/cypress/videos/
+/cypress/screenshots/
+/cypress/videos/*.mp4
+/cypress/screenshots/*.png
+
+# Ignore default Cypress example tests
+/cypress/integration/examples/
+
+# Ignore any OS or editor generated files
+.DS_Store
+.idea/
+.vscode/
+
+# Ignore npm or Yarn lock files
+package-lock.json
+yarn.lock
