@@ -5,6 +5,10 @@ export class BasePage {
     return cy.xpath(`//button[@class="hero-descriptor_btn btn btn-primary"]`);
   }
 
+  SignInBtn(){
+    return cy.xpath(`//button[@class='btn btn-outline-white header_signin']`)
+  }
+
   nameInput() {
     return cy.xpath(`//input[@name="name"]`);
   }
@@ -25,7 +29,7 @@ export class BasePage {
     return cy.xpath(`//input[@name="repeatPassword"]`);
   }
 
-  registerButton() {
+  submitButton() {
     return cy.xpath(`//button[@class="btn btn-primary"]`);
   }
 
@@ -39,6 +43,10 @@ export class BasePage {
 
   profileName() {
     return cy.xpath(`//p[contains(@class, "profile_name")]`);
+  }
+
+  logOutBtn(){
+    return cy.xpath(`//button[@class='dropdown-item btn btn-link user-nav_link']`)
   }
 
   garageHeaderBtn(){
@@ -78,7 +86,7 @@ export class BasePage {
   }
 
   submitRegistrationForm() {
-    this.registerButton().click();
+    this.submitButton().click();
   }
 
   validateSuccessfulRegistration(name, lastName) {
