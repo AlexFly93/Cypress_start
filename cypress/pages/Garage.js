@@ -1,6 +1,6 @@
 import { BasePage } from "./BasePage";
 
-export class Garage extends BasePage {
+class Garage extends BasePage {
 
   garageSideMenuButton(){
     return cy.xpath(`//a[@routerlink="garage"]`)
@@ -45,5 +45,6 @@ export class Garage extends BasePage {
   updateMileageButton(){
     return cy.xpath(`//button[@type='submit']`)
   }
-
 }
+
+export const garage = new Garage()

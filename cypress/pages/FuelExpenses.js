@@ -1,6 +1,6 @@
 import { BasePage } from "./BasePage";
 
-export class FuelExpenses extends BasePage {
+class FuelExpenses extends BasePage {
 
   fuelExpensesSideBarButton(){
     return cy.xpath(`a[@routerlink="expenses"`)
@@ -77,6 +77,5 @@ export class FuelExpenses extends BasePage {
   saveChangesButton(){
     return cy.xpath(`//button[normalize-space()='Save']`)
   }
-
-
 }
+export const fuelExpenses = new FuelExpenses()

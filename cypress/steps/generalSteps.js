@@ -1,8 +1,8 @@
-import { BasePage } from "./../pages/BasePage";
-const basePage = new BasePage();
+import { basePage } from "./../pages/BasePage";
 
 export class GeneralSteps {
-  login(email, password) {
+  login(email, password, env) {
+    cy.visit(env);
     basePage.SignInBtn().click();
     basePage.emailInput().fill(email);
     basePage.passwordInput().fill(password);
@@ -10,6 +10,7 @@ export class GeneralSteps {
   }
 
   logout() {
+    basePage.userNavDropdown().click();
     basePage.logOutBtn().click();
   }
 }

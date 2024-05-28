@@ -1,26 +1,22 @@
-import { BasePage } from "../pages/BasePage";
+import { basePage } from "../pages/BasePage";
+import { testEnv } from "../testData/environments";
+import { user } from "./../testData/users";
 
 describe("SignIn flow", () => {
-  const basePage = new BasePage()
-  const name = "Alex";
-  const lastName = "Fly";
-  const password = "A1234567!a";
-  let randomEmail;
+  beforeEach(() => {
+    randomEmail = generateRandomEmail();
+    cy.visit(testEnv);
+  });
 
-  beforeEach(()=>{
-    randomEmail = generateRandomEmail()
-    cy.visit("https://guest:welcome2qauto@qauto2.forstudy.space/");
-  })
-  
   it("successfull SignIn", () => {
     basePage.clickSignUpButton();
-    basePage.fillRegistrationForm(name, lastName, randomEmail, password)
-    basePage.submitRegistrationForm()
-    basePage.validateSuccessfulRegistration(name, lastName)
+    basePage.fillRegistrationForm(
+      user.name,
+      user.lastName,
+      user.randomEmail,
+      user.password
+    );
+    basePage.submitRegistrationForm();
+    basePage.validateSuccessfulRegistration(user.name, user.lastName);
   });
 });
-
-function generateRandomEmail() {
-  const timestamp = new Date().getTime();
-  return `testuser${timestamp}@example.com`;
-}

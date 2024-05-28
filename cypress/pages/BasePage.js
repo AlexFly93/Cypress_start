@@ -1,12 +1,10 @@
 export class BasePage {
-  
-
   signUpBtn() {
     return cy.xpath(`//button[@class="hero-descriptor_btn btn btn-primary"]`);
   }
 
-  SignInBtn(){
-    return cy.xpath(`//button[@class='btn btn-outline-white header_signin']`)
+  SignInBtn() {
+    return cy.xpath(`//button[@class='btn btn-outline-white header_signin']`);
   }
 
   nameInput() {
@@ -45,32 +43,36 @@ export class BasePage {
     return cy.xpath(`//p[contains(@class, "profile_name")]`);
   }
 
-  logOutBtn(){
-    return cy.xpath(`//button[@class='dropdown-item btn btn-link user-nav_link']`)
+  logOutBtn() {
+    return cy.xpath(
+      `//button[@class='dropdown-item btn btn-link user-nav_link']`
+    );
   }
 
-  garageHeaderBtn(){
-    return cy.xpath(`a[@routerlink="/panel/garage"']`)
+  garageHeaderBtn() {
+    return cy.xpath(`a[@routerlink="/panel/garage"']`);
   }
 
-  fuelExpensesHeaderBtn(){
-    return cy.xpath(`a[@routerlink="/panel/expenses"']`)
+  fuelExpensesHeaderBtn() {
+    return cy.xpath(`a[@routerlink="/panel/expenses"']`);
   }
 
-  instructionsHeaderBtn(){
-    return cy.xpath(`a[@routerlink="/panel/instructions"']`)
+  instructionsHeaderBtn() {
+    return cy.xpath(`a[@routerlink="/panel/instructions"']`);
   }
 
-  logoFooterBtn(){
-    return cy.xpath(`//a[@class='footer_logo']`)
+  logoFooterBtn() {
+    return cy.xpath(`//a[@class='footer_logo']`);
   }
 
-  textInFooter(){
-    return cy.xpath(`//p[@data-sider-select-id="00dee962-10a3-46bc-90b7-a9bfa86c6490"]`)
+  textInFooter() {
+    return cy.xpath(
+      `//p[@data-sider-select-id="00dee962-10a3-46bc-90b7-a9bfa86c6490"]`
+    );
   }
 
-  copyrightInFooter(){
-    return cy.xpath(`//p[normalize-space()='© 2021 Hillel IT school']`)
+  copyrightInFooter() {
+    return cy.xpath(`//p[normalize-space()='© 2021 Hillel IT school']`);
   }
 
   clickSignUpButton() {
@@ -97,4 +99,4 @@ export class BasePage {
   }
 }
 
-
+export const basePage = new BasePage()
